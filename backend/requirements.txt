@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+SQLAlchemy>=1.4
+pydantic
+requests
+matplotlib
+pandas
+bcrypt==4.1.3

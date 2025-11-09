@@ -1,0 +1,19 @@
+Start the backend
+uvicorn backend.app.main:app --reload
+
+Carbon API key
+$env:CARBON_INTERFACE_API_KEY = "MwGFZymIcoW5mHN8SUhMhQ"
+
+Load the challenges
+py -m backend.app.seed_challenges
+
+remove the database
+rm eco_action_tracker.db
+
+extra reqs:
+pip install bcrypt==4.1.3
+
+check if carbon api is working:
+# one-liner using Invoke-RestMethod
+$body = @{ action_name = "Rode a Bike"; quantity = 1 } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/carbon/estimate" -ContentType "application/json" -Body $body | ConvertTo-Json -Depth 5
