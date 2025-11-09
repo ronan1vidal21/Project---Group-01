@@ -18,5 +18,9 @@ $env:CARBON_INTERFACE_API_KEY = "MwGFZymIcoW5mHN8SUhMhQ"
 4. Start the backend
 uvicorn backend.app.main:app --reload
 
+5. Run the app.py
+py app.py
+
 Note: To remove the database file
 rm eco_action_tracker.db
+
